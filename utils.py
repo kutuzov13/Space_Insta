@@ -5,12 +5,12 @@ from pathlib import Path
 import requests
 
 
-def download_image(image_name, image_link, directory):
-    Path(directory).mkdir(parents=True, exist_ok=True)
+def download_image(image_name, image_link, image_directory):
+    Path(image_directory).mkdir(parents=True, exist_ok=True)
     response = requests.get(image_link, verify=False)
     response.raise_for_status()
 
-    with open(f'{directory}/{image_name}', mode='wb') as pic:
+    with open(f'{image_directory}/{image_name}', mode='wb') as pic:
         pic.write(response.content)
 
 

@@ -10,9 +10,9 @@ MAX_SIZE = (1080, 1080)
 
 
 def create_parser():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-p', '--path', help='Path to images to send', default=os.getenv('IMAGES_PATH'))
-    return parser
+    parse = argparse.ArgumentParser()
+    parse.add_argument('-p', '--path', help='Path to images to send', default=os.getenv('IMAGES_PATH'))
+    return parse
 
 
 def photos_editing(filepath):
@@ -24,11 +24,7 @@ def photos_editing(filepath):
         image.save(path_files, format="JPEG")
 
 
-def upload_in_instagram(instagram_username, instagram_password):
-    parser = create_parser()
-    args = parser.parse_args()
-    images_path = args.path
-
+def upload_in_instagram(instagram_username, instagram_password, images_path):
     photos_editing(images_path)
 
     bot = instabot.Bot()
@@ -47,4 +43,9 @@ if __name__ == '__main__':
     load_dotenv()
     insta_username = os.getenv('INSTAGRAM_USERNAME')
     insta_password = os.getenv('INSTAGRAM_PASSWORD')
-    upload_in_instagram(insta_username, insta_password )
+
+    parser = create_parser()
+    args = parser.parse_args()
+    images_directory = args.path
+
+    upload_in_instagram(insta_username, insta_password, images_directory)
