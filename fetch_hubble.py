@@ -2,7 +2,7 @@ import argparse
 
 import requests
 
-from utils import download_image, get_file_extension
+from utils import download_image, get_file_extension, create_directory
 
 
 def create_parser():
@@ -29,6 +29,7 @@ def main():
     args = parser.parse_args()
     hubble_launch_id = args.id
     hubble_path_images = args.download_path
+    create_directory(hubble_path_images)
     download_images_hubble(hubble_launch_id, hubble_path_images)
 
 

@@ -2,7 +2,7 @@ import argparse
 
 import requests
 
-from utils import download_image, get_file_extension
+from utils import download_image, get_file_extension, create_directory
 
 
 def create_parser():
@@ -29,6 +29,7 @@ def main():
     args = parse.parse_args()
     spacex_launch_id = args.id
     path_download_images = args.download_path
+    create_directory(path_download_images)
     download_images_spacex(spacex_launch_id, path_download_images)
 
 
