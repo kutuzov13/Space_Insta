@@ -24,7 +24,6 @@ def photos_editing(filepath):
 
 
 def upload_in_instagram():
-    load_dotenv()
     insta_username = os.getenv('INSTAGRAM_USERNAME')
     insta_password = os.getenv('INSTAGRAM_PASSWORD')
 
@@ -47,4 +46,5 @@ def upload_in_instagram():
 
 
 if __name__ == '__main__':
+    load_dotenv()
     upload_in_instagram()
