@@ -23,7 +23,7 @@ def resize_photos(filepath):
         image.save(path_files, format="JPEG")
 
 
-def upload_instagram():
+def upload_in_instagram():
     load_dotenv()
     insta_username = os.getenv('INSTAGRAM_USERNAME')
     insta_password = os.getenv('INSTAGRAM_PASSWORD')
@@ -47,4 +47,4 @@ def upload_instagram():
 
 
 if __name__ == '__main__':
-    upload_instagram()
+    upload_in_instagram()
