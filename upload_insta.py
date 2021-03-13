@@ -21,7 +21,7 @@ def photos_editing(filepath):
         filename = f'{filepath}/{file}'
         image = Image.open(filename)
         image.thumbnail(MAX_SIZE)
-        image.save(filename, format='JPEG')
+        image.save(filename)
 
 
 def upload_in_instagram(instagram_username, instagram_password, images_path):
@@ -39,7 +39,7 @@ def upload_in_instagram(instagram_username, instagram_password, images_path):
         print('Photos are not fully uploaded. Try again')
 
 
-if __name__ == '__main__':
+def main():
     load_dotenv()
     insta_username = os.getenv('INSTAGRAM_USERNAME')
     insta_password = os.getenv('INSTAGRAM_PASSWORD')
@@ -49,3 +49,7 @@ if __name__ == '__main__':
     images_directory = args.path
 
     upload_in_instagram(insta_username, insta_password, images_directory)
+
+
+if __name__ == '__main__':
+    main()
