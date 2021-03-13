@@ -18,10 +18,10 @@ def create_parser():
 def photos_editing(filepath):
     """Preparing images for uploading to Instagram"""
     for file in os.listdir(filepath):
-        path_files = f'{filepath}/{file}'
-        image = Image.open(path_files)
+        filename = f'{filepath}/{file}'
+        image = Image.open(filename)
         image.thumbnail(MAX_SIZE)
-        image.save(path_files, format='JPEG')
+        image.save(filename, format='JPEG')
 
 
 def upload_in_instagram(instagram_username, instagram_password, images_path):
