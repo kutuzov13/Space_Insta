@@ -15,7 +15,7 @@ def create_parser():
     return parser
 
 
-def resize_photos(filepath):
+def photos_editing(filepath):
     for file in os.listdir(filepath):
         path_files = f'{filepath}/{file}'
         image = Image.open(path_files)
@@ -32,7 +32,7 @@ def upload_in_instagram():
     args = parser.parse_args()
     images_path = args.path
 
-    resize_photos(images_path)
+    photos_editing(images_path)
 
     bot = instabot.Bot()
     bot.login(username=insta_username, password=insta_password)
