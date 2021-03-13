@@ -16,4 +16,4 @@ def download_image(image_name, image_link, image_directory):
 
 def get_file_extension(link_images):
     parsed_link = urlparse(link_images)
-    return os.path.splitext(unquote(parsed_link.path))[-1][1:]
+    return os.path.splitext(unquote(parsed_link.path))[-1]
