@@ -17,10 +17,10 @@ def create_parser():
 
 def resize_photos(directory):
     for file in os.listdir(directory):
-        path_file = f'{directory}/{file}'
-        image = Image.open(path_file)
+        path_files = f'{directory}/{file}'
+        image = Image.open(path_files)
         image.thumbnail(MAX_SIZE)
-        image.save(path_file, format="JPEG")
+        image.save(path_files, format="JPEG")
 
 
 def upload_instagram():
