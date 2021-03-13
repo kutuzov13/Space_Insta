@@ -16,6 +16,7 @@ def create_parser():
 
 
 def photos_editing(filepath):
+    """Preparing images for uploading to Instagram"""
     for file in os.listdir(filepath):
         path_files = f'{filepath}/{file}'
         image = Image.open(path_files)
@@ -23,10 +24,7 @@ def photos_editing(filepath):
         image.save(path_files, format="JPEG")
 
 
-def upload_in_instagram():
-    insta_username = os.getenv('INSTAGRAM_USERNAME')
-    insta_password = os.getenv('INSTAGRAM_PASSWORD')
-
+def upload_in_instagram(instagram_username, instagram_password):
     parser = create_parser()
     args = parser.parse_args()
     images_path = args.path
@@ -34,17 +32,19 @@ def upload_in_instagram():
     photos_editing(images_path)
 
     bot = instabot.Bot()
-    bot.login(username=insta_username, password=insta_password)
+    bot.login(username=instagram_username, password=instagram_password)
 
     insta_images_names = os.listdir(images_path)
     try:
         for insta_image_name in insta_images_names:
             bot.upload_photo(f'{images_path}/{insta_image_name}')
-    except Exception as error:
+    except FileNotFoundError as error:
         print(error)
         print('Photos are not fully uploaded. Try again')
 
 
 if __name__ == '__main__':
     load_dotenv()
-    upload_in_instagram()
+    insta_username = os.getenv('INSTAGRAM_USERNAME')
+    insta_password = os.getenv('INSTAGRAM_PASSWORD')
+    upload_in_instagram(insta_username, insta_password )
