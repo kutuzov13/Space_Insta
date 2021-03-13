@@ -15,9 +15,9 @@ def create_parser():
     return parser
 
 
-def resize_photos(directory):
-    for file in os.listdir(directory):
-        path_files = f'{directory}/{file}'
+def resize_photos(filepath):
+    for file in os.listdir(filepath):
+        path_files = f'{filepath}/{file}'
         image = Image.open(path_files)
         image.thumbnail(MAX_SIZE)
         image.save(path_files, format="JPEG")
