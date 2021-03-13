@@ -21,7 +21,7 @@ def photos_editing(filepath):
         path_files = f'{filepath}/{file}'
         image = Image.open(path_files)
         image.thumbnail(MAX_SIZE)
-        image.save(path_files, format="JPEG")
+        image.save(path_files, format='JPEG')
 
 
 def upload_in_instagram(instagram_username, instagram_password, images_path):
