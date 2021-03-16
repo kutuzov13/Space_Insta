@@ -15,7 +15,7 @@ def create_parser():
     return parse
 
 
-def editing_photos(filepath):
+def edit_photos(filepath):
     """Preparing images for uploading to Instagram."""
     for filename in os.listdir(filepath):
         full_path = f'{filepath}/{filename}'
@@ -25,7 +25,7 @@ def editing_photos(filepath):
 
 
 def upload_in_instagram(instagram_username, instagram_password, images_path):
-    editing_photos(images_path)
+    edit_photos(images_path)
 
     bot = instabot.Bot()
     bot.login(username=instagram_username, password=instagram_password)
