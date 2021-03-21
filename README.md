@@ -1,54 +1,54 @@
 # Space Instagram
 
-Скрипт для загрузки фотографий с запусков SpaceX, и фотографий сделанных космическим телескопом Hubble.
-С возможностью отправкой фотографий в Instagram! 
+Script for loading photos from SpaceX launches and photos taken by the Hubble Space Telescope.
+With the ability to send photos to Instagram!
 
-### Как установить
-Для запуска скрипта Python3 должен быть уже установлен.
+### Install
+Python3 is required to run the script.
 
-Клонируйте репозиторий с GitHub.
+Clone a repository from GitHub.
 
 ```git
 git clone https://github.com/kutuzov13/space_insta.git
 ```
 
-Установите зависимости.
+Install requirements.
 
 ```
 pip install -r requirements.txt
 ```
-### Библиотеки
-- requests==2.25.1 -> Для запросов к API.
-- Pillow~=8.1.2 -> Для обработки изображений с последующей отправкой.
-- instabot~=0.117.0 -> Для отправки изображений в Инстаграм.
-- python-dotenv~=0.15.0 -> Для работы с переменным окружением.
+### Libraries
+- requests==2.25.1 -> For API requests.
+- Pillow~=8.1.2 -> For image processing with subsequent sending.
+- instabot~=0.117.0 -> Send Images to Instagram.
+- python-dotenv~=0.15.0 -> To work with a variable environment.
 
-### Переменные окружения
-Логин/Пароль Instagram берется из переменного окружения.
-- создайте файл ```.env``` рядом с файлом ```upload_insta.py```.
-- запишите Логин/Пароль в файл ```.env```:
+### Environment Variables
+Instagram Login / Password is taken from the environment variable.
+- create file ```.env``` next to the file ```upload_insta.py```.
+- write down the Login / Password to the file ```.env```:
   
   ```INSTAGRAM_USERNAME='YOU_LOGIN'```.<br/>
   ```INSTAGRAM_PASSWORD='YOU_PASSWORD'```.<br/>
   
   
-### Как запустить проект
-Если вы хотите получить фотографии с запусков ракет SpaceX.
+### Run
+If you want to get photos from SpaceX rocket launches.
 ```
-python fetch_spacex.py <ID-запуска> --download_path <path for download images>
+python fetch_spacex.py <Launch ID> --download_path <path for download images>
 ```
-По умолчанию изображения скачиваются в папку ```images```.
+By default, images are uploaded to the folder ```images```.
 
-Если вы хотите получить фотографии со спутника Hubble.
+If you want to receive satellite photos Hubble.
 ```
-python fetch_hubble.py <ID-запуска> --download_path <path for download images>
+python fetch_hubble.py <Launch ID> --download_path <path for download images>
 ```
-По умолчанию изображения скачиваются в папку ```images```.
-Для отправки фотографий в инстаграм .
+By default, images are uploaded to the folder ```images```.
+Send photo to Instagram.
 ```
 python upload_insta.py -p <path to the photos you want to upload to Instagram>
 ```
-По умолчанию изображения отправляются в Instagram из папки ```images```. 
+By default, images are sent to Instagram from a folder ```images```. 
 
-### Цель проекта
-Код написан в образовательных целях на онлайн-курсе для веб-разработчиков ***[dvmn.org](https://dvmn.org/modules/)***.
+### Objective of the project
+The code is written for educational purposes as an online course for web developers ***[dvmn.org](https://dvmn.org/modules/)***.

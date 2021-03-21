@@ -19,9 +19,9 @@ def download_images_spacex(launch_id, image_directory):
     response.raise_for_status()
 
     spacex_image_urls = response.json()['links']['flickr_images']
-    for id_url_image, link_url_image in enumerate(spacex_image_urls):
-        spacex_filename = f'spacex{id_url_image}{get_file_extension(link_url_image)}'
-        download_image(spacex_filename, link_url_image, image_directory)
+    for image_id, image_url in enumerate(spacex_image_urls):
+        spacex_filename = f'spacex{image_id}{get_file_extension(image_url)}'
+        download_image(spacex_filename, image_url, image_directory)
 
 
 def main():

@@ -13,10 +13,10 @@ def download_image(image_name, image_link, image_directory):
         pic.write(response.content)
 
 
-def create_directory(name_directory):
-    Path(name_directory).mkdir(parents=True, exist_ok=True)
+def create_directory(directory_name):
+    Path(directory_name).mkdir(parents=True, exist_ok=True)
 
 
-def get_file_extension(link_images):
-    parsed_link = urlparse(link_images)
+def get_file_extension(image_link):
+    parsed_link = urlparse(image_link)
     return os.path.splitext(unquote(parsed_link.path))[-1]
