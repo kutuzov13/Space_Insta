@@ -9,7 +9,7 @@ from utils import download_image, get_file_extension, create_directory
 
 def create_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('date', help='date of the photo taken')
+    parser.add_argument('date', help='date of the photo taken(example: 2020-01-01)')
     parser.add_argument('--download_path', help='Image download path', default='images')
     return parser
 
