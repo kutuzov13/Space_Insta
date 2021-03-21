@@ -44,6 +44,13 @@ If you want to receive satellite photos Hubble.
 python fetch_hubble.py <Launch ID> --download_path <path for download images>
 ```
 By default, images are uploaded to the folder ```images```.
+
+If you want to upload photos taken by the rover.
+```
+python fetch_nasa.py <date> --download_path <path for download images> 
+```
+Date example: 2020-01-01
+
 Send photo to Instagram.
 ```
 python upload_insta.py -p <path to the photos you want to upload to Instagram>
