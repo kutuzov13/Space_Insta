@@ -19,9 +19,9 @@ pip install -r requirements.txt
 ```
 ### Libraries
 - requests==2.25.1 -> For API requests.
-- Pillow~=8.1.2 -> For image processing with subsequent sending.
-- instabot~=0.117.0 -> Send Images to Instagram.
-- python-dotenv~=0.15.0 -> To work with a variable environment.
+- Pillow==8.1.2 -> For image processing with subsequent sending.
+- instabot==0.117.0 -> Send Images to Instagram.
+- python-dotenv==0.15.0 -> To work with a variable environment.
 
 ### Environment Variables
 Instagram Login / Password is taken from the environment variable.
