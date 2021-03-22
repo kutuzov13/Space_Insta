@@ -49,6 +49,8 @@ python fetch_nasa.py <date> --download_path <path for download images>
 ```
 Date example: 2020-01-01
 
+By default, images are uploaded to the folder ```images```.
+
 Send photo to Instagram.
 ```
 python upload_insta.py -p <path to the photos you want to upload to Instagram>
