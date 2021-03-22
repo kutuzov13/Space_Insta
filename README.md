@@ -37,13 +37,11 @@ If you want to get photos from SpaceX rocket launches.
 ```
 python fetch_spacex.py <Launch ID> --download_path <path for download images>
 ```
-By default, images are uploaded to the folder ```images```.
 
 If you want to receive satellite photos Hubble.
 ```
 python fetch_hubble.py <Launch ID> --download_path <path for download images>
 ```
-By default, images are uploaded to the folder ```images```.
 
 If you want to upload photos taken by the rover.
 ```
