@@ -14,7 +14,7 @@ def create_parser():
     return parser
 
 
-def fetch_images_mars_rover(token, date_photo, image_directory):
+def download_images_mars_rover(token, date_photo, image_directory):
 
     api_nasa = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos/'
     params = {'earth_date': date_photo,
@@ -41,7 +41,7 @@ def main():
     rover_path_images = args.download_path
 
     create_directory(rover_path_images)
-    fetch_images_mars_rover(nasa_token, date_photo, rover_path_images)
+    download_images_mars_rover(nasa_token, date_photo, rover_path_images)
 
 
 if __name__ == '__main__':
