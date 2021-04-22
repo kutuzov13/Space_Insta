@@ -72,4 +72,4 @@ By default, images are sent to Instagram from a folder `images`.
 
 ### Objective of the project
 
-The code is written for educational purposes as an online course for web developers **_[dvmn.org](https://dvmn.org/modules/)_**.
+The code is written for educational purposes as an online course for web developers **_[dvmn.org](https://dvmn.org/referrals/LKx4rvFOn7SwkzhVrznRuPRs6KUOF6jkJH2oImC2/)_**.
