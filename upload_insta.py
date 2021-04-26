@@ -1,22 +1,27 @@
 import argparse
+import logging
 import os
 
 import instabot
 from dotenv import load_dotenv
 from PIL import Image
 
-
 MAX_SIZE = (1080, 1080)
 
 
 def create_parser():
     parse = argparse.ArgumentParser()
-    parse.add_argument('-p', '--path', help='Path to images to send', default=os.getenv('IMAGES_PATH'))
+    parse.add_argument(
+        '-p',
+        '--path',
+        help='Path to images to send',
+        default=os.getenv('IMAGES_PATH'),
+    )
     return parse
 
 
 def edit_photos(filepath):
-    """Preparing images for uploading to Instagram."""
+    """Return preparing image for uploading to Instagram."""
     for filename in os.listdir(filepath):
         full_path = f'{filepath}/{filename}'
         image = Image.open(full_path)
@@ -35,8 +40,7 @@ def upload_in_instagram(instagram_username, instagram_password, images_path):
         for insta_image_name in insta_images_names:
             bot.upload_photo(f'{images_path}/{insta_image_name}')
     except FileNotFoundError as error:
-        print(error)
-        print('Photos are not fully uploaded. Try again')
+        logging.info(error)
 
 
 def main():
