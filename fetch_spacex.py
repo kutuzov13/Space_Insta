@@ -6,7 +6,7 @@ from utils import create_directory, download_image, get_file_extension
 
 def create_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('id', help='id запуска', default='latest')
+    parser.add_argument('id', help='id launch', default='latest')
     parser.add_argument('--download_path', help='Image download path', default='images')
     return parser
 
