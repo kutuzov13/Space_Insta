@@ -5,6 +5,7 @@ import requests
 from dotenv import load_dotenv
 from utils import create_directory, download_image, get_file_extension
 
+API_NASA = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos/'
 
 
 def create_parser():
@@ -15,18 +16,17 @@ def create_parser():
 
 
 def download_images_mars_rover(token, date_photo, image_directory):
+    payload = {
+        'earth_date': date_photo,
+        'api_key': token,
+        'camera': 'FHAZ',
+    }
 
-    api_nasa = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos/'
-    params = {'earth_date': date_photo,
-              'api_key': token,
-              'camera': 'FHAZ',
-              }
-
-    response = requests.get(api_nasa, params=params)
+    response = requests.get(API_NASA, params=payload)
     response.raise_for_status()
 
     info_list = response.json().get('photos')
-    for image_name, nasa_url in enumerate(info_list):
+    for _image_name, nasa_url in enumerate(info_list):
         nasa_filename = f'{nasa_url.get("id")}.{get_file_extension(nasa_url.get("img_src"))}'
         download_image(nasa_filename, nasa_url.get('img_src'), image_directory)
 
