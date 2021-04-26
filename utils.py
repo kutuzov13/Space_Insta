@@ -1,4 +1,4 @@
-import os
+from os import path
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
@@ -19,4 +19,4 @@ def create_directory(directory_name):
 
 def get_file_extension(image_link):
     parsed_link = urlparse(image_link)
-    return os.path.splitext(unquote(parsed_link.path))[-1]
+    return path.splitext(unquote(parsed_link.path))[-1]
