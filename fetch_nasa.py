@@ -3,8 +3,8 @@ import os
 
 import requests
 from dotenv import load_dotenv
+from utils import create_directory, download_image, get_file_extension
 
-from utils import download_image, get_file_extension, create_directory
 
 
 def create_parser():
