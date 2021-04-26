@@ -1,8 +1,7 @@
 import argparse
 
 import requests
-
-from utils import download_image, get_file_extension, create_directory
+from utils import create_directory, download_image, get_file_extension
 
 
 def create_parser():
